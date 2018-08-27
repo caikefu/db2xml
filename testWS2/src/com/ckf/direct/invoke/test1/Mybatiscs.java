@@ -118,7 +118,8 @@ public class Mybatiscs {
 	    System.out.println("已生产sqlcurd,地址："+url);
 	} 
 	 
-	public static void main(String[] args) throws IOException { 
+	public static void main(String[] args) throws IOException {  
+		System.out.println("github test");
 		makeSql("certificate","spw"); 
 	}
 }

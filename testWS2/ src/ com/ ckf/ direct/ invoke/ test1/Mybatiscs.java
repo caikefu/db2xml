@@ -15,7 +15,7 @@ import java.sql.SQLException;
  *
  */
 public class Mybatiscs {   
-	public static int is_pager = 1; //0:·ÖÒ³ 1:²»·ÖÒ³
+	public static int is_pager = 1; //0:åˆ†é¡µ 1:ä¸åˆ†é¡µ
 	public static String dbname = "";
 	private static Connection getConn() { 
 	    String driver = "com.mysql.jdbc.Driver";
@@ -26,7 +26,7 @@ public class Mybatiscs {
 	    String password = "123456";
 	    Connection conn = null;
 	    try {
-	        Class.forName(driver); //classLoader,¼ÓÔØ¶ÔÓ¦Çı¶¯
+	        Class.forName(driver); //classLoader,åŠ è½½å¯¹åº”é©±åŠ¨
 	        conn = (Connection) DriverManager.getConnection(url, username, password);
 	    } catch (ClassNotFoundException e) {
 	        e.printStackTrace();
@@ -71,24 +71,24 @@ public class Mybatiscs {
 		    	//System.out.println(columName);  
 		    	if(!columName.equals("id")){ 
 		    		if(set.isLast()){ 
-		    			prefixAdd+=columName+"\n";//ĞÂÔö 
+		    			prefixAdd+=columName+"\n";//æ–°å¢ 
 		    			prefixUpdate+="\n<if test=\""+columName+" !=null and "+columName+" !=''\">\n "
 		    					+ columName+"=#{"+columName+"}\n" 
-		    					+ "</if>";//ĞŞ¸Ä 
+		    					+ "</if>";//ä¿®æ”¹ 
 		    			queryPrefix+=columName;
 		    		}else{ 
-		    			prefixAdd+=columName+","+"\n";//ĞÂÔö 
+		    			prefixAdd+=columName+","+"\n";//æ–°å¢ 
 		    			prefixUpdate+="\n<if test=\""+columName+" !=null and "+columName+" !=''\">\n "
 		    					+ columName+"=#{"+columName+"},\n" 
-		    					+ "</if>";//ĞŞ¸Ä 
+		    					+ "</if>";//ä¿®æ”¹ 
 		    			queryPrefix+=columName+",\n";
 		    		}
 		    	} 
 		    	if(!columName.equals("id")){  
 		    		if(set.isLast()){ 
-			        	endAdd+="#{"+columName+"}"+"\n";//ĞÂÔö
+			        	endAdd+="#{"+columName+"}"+"\n";//æ–°å¢
 		    		}else{ 
-			        	endAdd+="#{"+columName+"}"+","+"\n";//ĞÂÔö
+			        	endAdd+="#{"+columName+"}"+","+"\n";//æ–°å¢
 		    		}
 		    	}  
 		    	
@@ -115,10 +115,10 @@ public class Mybatiscs {
 	    } catch (SQLException e) {
 	        e.printStackTrace();
 	    }
-	    System.out.println("ÒÑÉú²úsqlcurd,µØÖ·£º"+url);
+	    System.out.println("å·²ç”Ÿäº§sqlcurd,åœ°å€ï¼š"+url);
 	} 
-	 
-	public static void main(String[] args) throws IOException {  
+	/tasdasdasd
+	public static void main(String[] args) throws IOException {
 		System.out.println("github test");
 		makeSql("certificate","spw"); 
 	}
